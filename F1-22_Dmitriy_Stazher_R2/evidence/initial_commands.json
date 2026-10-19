@@ -1,0 +1,59 @@
+[
+  {
+    "label": "initial_python",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-VV"
+    ],
+    "cwd": "/workspace/scratch/8febe5931947/f122-r2/repo/F1-22_Dmitriy_Stazher_R2",
+    "started_utc": "2026-10-19T06:49:37.279583+00:00",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "initial_python.stdout.log",
+    "stderr": "initial_python.stderr.log"
+  },
+  {
+    "label": "initial_package",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-B",
+      "CHECK_PACKAGE.py"
+    ],
+    "cwd": "/workspace/scratch/8febe5931947/f122-r2/repo/F1-22_Dmitriy_Stazher_R2",
+    "started_utc": "2026-10-19T06:49:37.283099+00:00",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "initial_package.stdout.log",
+    "stderr": "initial_package.stderr.log"
+  },
+  {
+    "label": "initial_baseline",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-B",
+      "RUN_CHECKS.py",
+      "baseline"
+    ],
+    "cwd": "/workspace/scratch/8febe5931947/f122-r2/repo/F1-22_Dmitriy_Stazher_R2",
+    "started_utc": "2026-10-19T06:49:37.363965+00:00",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "initial_baseline.stdout.log",
+    "stderr": "initial_baseline.stderr.log"
+  },
+  {
+    "label": "initial_candidate",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-B",
+      "RUN_CHECKS.py",
+      "candidate"
+    ],
+    "cwd": "/workspace/scratch/8febe5931947/f122-r2/repo/F1-22_Dmitriy_Stazher_R2",
+    "started_utc": "2026-10-19T06:49:37.787429+00:00",
+    "exit_code": 3,
+    "expected_exit_code": 3,
+    "stdout": "initial_candidate.stdout.log",
+    "stderr": "initial_candidate.stderr.log"
+  }
+]

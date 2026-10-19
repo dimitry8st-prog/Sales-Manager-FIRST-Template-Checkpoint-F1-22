@@ -1,0 +1,182 @@
+test_accepts_en_ru_and_additional_synthetic_locale (test_first_binding.FirstBindingTest.test_accepts_en_ru_and_additional_synthetic_locale) ... ok
+test_approval_reference_must_be_nonempty_text (test_first_binding.FirstBindingTest.test_approval_reference_must_be_nonempty_text) ... ok
+test_email_is_trimmed_lowercased_and_syntax_checked (test_first_binding.FirstBindingTest.test_email_is_trimmed_lowercased_and_syntax_checked) ... ok
+test_errors_never_echo_secret_sentinel (test_first_binding.FirstBindingTest.test_errors_never_echo_secret_sentinel) ... ok
+test_fact_nested_schema_and_text_errors_have_distinct_codes (test_first_binding.FirstBindingTest.test_fact_nested_schema_and_text_errors_have_distinct_codes) ... ok
+test_fact_shape_text_order_uniqueness_and_ids (test_first_binding.FirstBindingTest.test_fact_shape_text_order_uniqueness_and_ids) ... ok
+test_identifiers_use_full_ascii_match (test_first_binding.FirstBindingTest.test_identifiers_use_full_ascii_match) ... ok
+test_import_uses_no_application_or_network_dependencies (test_first_binding.FirstBindingTest.test_import_uses_no_application_or_network_dependencies) ... ok
+test_input_and_nested_output_are_independent (test_first_binding.FirstBindingTest.test_input_and_nested_output_are_independent) ... ok
+test_input_schema_has_seventeen_required_fields (test_first_binding.FirstBindingTest.test_input_schema_has_seventeen_required_fields) ... ok
+test_invalid_argument_types_and_naive_now_are_input_errors (test_first_binding.FirstBindingTest.test_invalid_argument_types_and_naive_now_are_input_errors) ... ok
+test_invalid_duplicate_or_empty_locale_config_is_rejected (test_first_binding.FirstBindingTest.test_invalid_duplicate_or_empty_locale_config_is_rejected) ... ok
+test_invalid_fact_identifier_uses_identity_error_group (test_first_binding.FirstBindingTest.test_invalid_fact_identifier_uses_identity_error_group) ... ok
+test_invalid_or_reversed_validity_is_rejected (test_first_binding.FirstBindingTest.test_invalid_or_reversed_validity_is_rejected) ... ok
+test_limits_require_integers_and_reject_bool (test_first_binding.FirstBindingTest.test_limits_require_integers_and_reject_bool) ... ok
+test_locale_list_is_extensible_unique_and_case_sensitive (test_first_binding.FirstBindingTest.test_locale_list_is_extensible_unique_and_case_sensitive) ... ok
+test_mailbox_shape_is_checked_at_email_group (test_first_binding.FirstBindingTest.test_mailbox_shape_is_checked_at_email_group) ... ok
+test_missing_and_unknown_top_level_fields_are_schema_errors (test_first_binding.FirstBindingTest.test_missing_and_unknown_top_level_fields_are_schema_errors) ... ok
+test_now_utc_conversion_overflow_is_an_input_error (test_first_binding.FirstBindingTest.test_now_utc_conversion_overflow_is_an_input_error) ... ok
+test_offer_shape_is_checked_at_offer_group (test_first_binding.FirstBindingTest.test_offer_shape_is_checked_at_offer_group) ... ok
+test_offer_text_must_be_nonempty_and_is_preserved (test_first_binding.FirstBindingTest.test_offer_text_must_be_nonempty_and_is_preserved) ... ok
+test_only_canonical_lowercase_runtime_uuid_is_accepted (test_first_binding.FirstBindingTest.test_only_canonical_lowercase_runtime_uuid_is_accepted) ... ok
+test_outbound_mode_is_always_forbidden (test_first_binding.FirstBindingTest.test_outbound_mode_is_always_forbidden) ... ok
+test_positive_example_normalizes_expected_fields (test_first_binding.FirstBindingTest.test_positive_example_normalizes_expected_fields) ... ok
+test_runtime_and_external_campaign_ids_remain_distinct (test_first_binding.FirstBindingTest.test_runtime_and_external_campaign_ids_remain_distinct) ... ok
+test_same_input_and_now_produce_equal_results (test_first_binding.FirstBindingTest.test_same_input_and_now_produce_equal_results) ... ok
+test_timestamp_utc_conversion_overflow_is_a_validity_error (test_first_binding.FirstBindingTest.test_timestamp_utc_conversion_overflow_is_a_validity_error) ... ok
+test_tz_negative_json_examples_have_one_expected_error_each (test_first_binding.FirstBindingTest.test_tz_negative_json_examples_have_one_expected_error_each) ... ok
+test_utc_z_suffix_is_supported (test_first_binding.FirstBindingTest.test_utc_z_suffix_is_supported) ... ok
+test_validation_groups_follow_the_specified_order (test_first_binding.FirstBindingTest.test_validation_groups_follow_the_specified_order) ... ok
+test_validity_includes_start_and_excludes_expiry (test_first_binding.FirstBindingTest.test_validity_includes_start_and_excludes_expiry) ... ok
+test_validity_normalizes_offsets_to_utc (test_first_binding.FirstBindingTest.test_validity_normalizes_offsets_to_utc) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.020s
+
+OK
+test_body_whitespace_or_non_string_rejected (test_language_registry.LanguageRegistryTest.test_body_whitespace_or_non_string_rejected) ... ok
+test_command_like_template_text_stays_text (test_language_registry.LanguageRegistryTest.test_command_like_template_text_stays_text) ... ok
+test_damage_of_unrequested_locale_pack_detected (test_language_registry.LanguageRegistryTest.test_damage_of_unrequested_locale_pack_detected) ... ok
+test_damaged_loaded_rejected_on_revalidation (test_language_registry.LanguageRegistryTest.test_damaged_loaded_rejected_on_revalidation) ... ok
+test_default_locale_not_in_active_rejected (test_language_registry.LanguageRegistryTest.test_default_locale_not_in_active_rejected) ... ok
+test_duplicate_active_locale_rejected (test_language_registry.LanguageRegistryTest.test_duplicate_active_locale_rejected) ... ok
+test_duplicate_fact_id_in_template_rejected (test_language_registry.LanguageRegistryTest.test_duplicate_fact_id_in_template_rejected) ... ok
+test_duplicate_pack_locale_rejected (test_language_registry.LanguageRegistryTest.test_duplicate_pack_locale_rejected) ... ok
+test_empty_approved_fact_ids_with_empty_pack_fact_ids_allowed (test_language_registry.LanguageRegistryTest.test_empty_approved_fact_ids_with_empty_pack_fact_ids_allowed) ... ok
+test_empty_templates_rejected (test_language_registry.LanguageRegistryTest.test_empty_templates_rejected) ... ok
+test_error_str_returns_only_code_and_no_sentinel_leak (test_language_registry.LanguageRegistryTest.test_error_str_returns_only_code_and_no_sentinel_leak) ... ok
+test_extra_inactive_pack_rejected (test_language_registry.LanguageRegistryTest.test_extra_inactive_pack_rejected) ... ok
+test_fact_ids_invalid_types_via_public_functions (test_language_registry.LanguageRegistryTest.test_fact_ids_invalid_types_via_public_functions) ... ok
+test_full_en_ru_example_matches_expected_result (test_language_registry.LanguageRegistryTest.test_full_en_ru_example_matches_expected_result) ... ok
+test_initial_empty_subject_rejected (test_language_registry.LanguageRegistryTest.test_initial_empty_subject_rejected) ... ok
+test_inputs_not_mutated_and_no_shared_nested_objects (test_language_registry.LanguageRegistryTest.test_inputs_not_mutated_and_no_shared_nested_objects) ... ok
+test_invalid_base_types_rejected (test_language_registry.LanguageRegistryTest.test_invalid_base_types_rejected) ... ok
+test_invalid_fact_set_rejected (test_language_registry.LanguageRegistryTest.test_invalid_fact_set_rejected) ... ok
+test_invalid_identifiers_rejected (test_language_registry.LanguageRegistryTest.test_invalid_identifiers_rejected) ... ok
+test_invalid_loaded_schema_rejected_by_build (test_language_registry.LanguageRegistryTest.test_invalid_loaded_schema_rejected_by_build) ... ok
+test_invalid_locale_format_rejected (test_language_registry.LanguageRegistryTest.test_invalid_locale_format_rejected) ... ok
+test_invalid_pack_schema_rejected (test_language_registry.LanguageRegistryTest.test_invalid_pack_schema_rejected) ... ok
+test_invalid_registry_schema_rejected (test_language_registry.LanguageRegistryTest.test_invalid_registry_schema_rejected) ... ok
+test_kind_invalid_types_via_public_functions (test_language_registry.LanguageRegistryTest.test_kind_invalid_types_via_public_functions) ... ok
+test_loaded_result_has_exact_keys_and_no_status_fields (test_language_registry.LanguageRegistryTest.test_loaded_result_has_exact_keys_and_no_status_fields) ... ok
+test_missing_pack_rejected (test_language_registry.LanguageRegistryTest.test_missing_pack_rejected) ... ok
+test_module_is_stdlib_only_no_network_or_driver_imports (test_language_registry.LanguageRegistryTest.test_module_is_stdlib_only_no_network_or_driver_imports) ... ok
+test_non_identifier_fact_entry_rejected (test_language_registry.LanguageRegistryTest.test_non_identifier_fact_entry_rejected) ... ok
+test_non_initial_spaces_only_subject_stored_unchanged (test_language_registry.LanguageRegistryTest.test_non_initial_spaces_only_subject_stored_unchanged) ... ok
+test_pack_inner_locale_inactive_or_duplicate_rejected (test_language_registry.LanguageRegistryTest.test_pack_inner_locale_inactive_or_duplicate_rejected) ... ok
+test_pack_version_mismatch_rejected (test_language_registry.LanguageRegistryTest.test_pack_version_mismatch_rejected) ... ok
+test_query_locale_invalid_format_rejected (test_language_registry.LanguageRegistryTest.test_query_locale_invalid_format_rejected) ... ok
+test_query_locale_non_string_rejected (test_language_registry.LanguageRegistryTest.test_query_locale_non_string_rejected) ... ok
+test_query_locale_not_active_rejected (test_language_registry.LanguageRegistryTest.test_query_locale_not_active_rejected) ... ok
+test_repeated_calls_are_equal (test_language_registry.LanguageRegistryTest.test_repeated_calls_are_equal) ... ok
+test_same_template_id_across_locales_keeps_bodies_separate (test_language_registry.LanguageRegistryTest.test_same_template_id_across_locales_keeps_bodies_separate) ... ok
+test_swapped_packs_with_equal_versions_rejected (test_language_registry.LanguageRegistryTest.test_swapped_packs_with_equal_versions_rejected) ... ok
+test_synthetic_third_language_extends_without_code_changes (test_language_registry.LanguageRegistryTest.test_synthetic_third_language_extends_without_code_changes) ... ok
+test_template_locale_mismatch_rejected (test_language_registry.LanguageRegistryTest.test_template_locale_mismatch_rejected) ... ok
+test_template_locale_non_string_rejected (test_language_registry.LanguageRegistryTest.test_template_locale_non_string_rejected) ... ok
+test_unapproved_fact_rejected (test_language_registry.LanguageRegistryTest.test_unapproved_fact_rejected) ... ok
+test_unicode_preserved_unchanged (test_language_registry.LanguageRegistryTest.test_unicode_preserved_unchanged) ... ok
+test_unknown_kind_rejected (test_language_registry.LanguageRegistryTest.test_unknown_kind_rejected) ... ok
+test_version_mapping_keyset_mismatch_rejected (test_language_registry.LanguageRegistryTest.test_version_mapping_keyset_mismatch_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.013s
+
+OK
+test_all_11_golden_inputs_match_exact_output (test_f122.TestF122GoldenExamples.test_all_11_golden_inputs_match_exact_output) ... ok
+test_all_five_kinds_for_en_and_ru_through_real_f106_loader (test_f122.TestF122GoldenExamples.test_all_five_kinds_for_en_and_ru_through_real_f106_loader) ... ok
+test_handoff_body_is_returned_as_literal_text (test_f122.TestF122GoldenExamples.test_handoff_body_is_returned_as_literal_text) ... ok
+test_non_initial_template_allows_empty_subject (test_f122.TestF122GoldenExamples.test_non_initial_template_allows_empty_subject) ... ok
+test_third_locale_loads_with_f106_without_core_changes (test_f122.TestF122GoldenExamples.test_third_locale_loads_with_f106_without_core_changes) ... ok
+test_actual_f106_errors_are_preserved_without_input_leakage (test_f122.TestF122ImmutabilityAndStrictTypes.test_actual_f106_errors_are_preserved_without_input_leakage) ... ok
+test_bound_locale_requires_exact_builtin_string_before_f106 (test_f122.TestF122ImmutabilityAndStrictTypes.test_bound_locale_requires_exact_builtin_string_before_f106) ... ok
+test_builtin_dict_subclass_in_loaded_pack_is_rejected_after_f106 (test_f122.TestF122ImmutabilityAndStrictTypes.test_builtin_dict_subclass_in_loaded_pack_is_rejected_after_f106) ... ok
+test_builtin_list_subclass_in_loaded_facts_is_rejected_after_f106 (test_f122.TestF122ImmutabilityAndStrictTypes.test_builtin_list_subclass_in_loaded_facts_is_rejected_after_f106) ... ok
+test_builtin_string_subclass_in_bound_fact_list_is_rejected_after_f106 (test_f122.TestF122ImmutabilityAndStrictTypes.test_builtin_string_subclass_in_bound_fact_list_is_rejected_after_f106) ... ok
+test_builtin_string_subclass_in_bound_subject_is_rejected_after_f106 (test_f122.TestF122ImmutabilityAndStrictTypes.test_builtin_string_subclass_in_bound_subject_is_rejected_after_f106) ... ok
+test_builtin_string_subclass_in_loaded_registry_version_is_identifier_error (test_f122.TestF122ImmutabilityAndStrictTypes.test_builtin_string_subclass_in_loaded_registry_version_is_identifier_error) ... ok
+test_builtin_string_subclass_in_loaded_template_body_is_rejected_after_f106 (test_f122.TestF122ImmutabilityAndStrictTypes.test_builtin_string_subclass_in_loaded_template_body_is_rejected_after_f106) ... ok
+test_builtin_string_subclass_in_loaded_template_locale_has_mapped_error (test_f122.TestF122ImmutabilityAndStrictTypes.test_builtin_string_subclass_in_loaded_template_locale_has_mapped_error) ... ok
+test_builtin_subclasses_in_loaded_locales_and_templates_use_contract_codes (test_f122.TestF122ImmutabilityAndStrictTypes.test_builtin_subclasses_in_loaded_locales_and_templates_use_contract_codes) ... ok
+test_builtin_subclasses_inside_bound_template_use_contract_codes (test_f122.TestF122ImmutabilityAndStrictTypes.test_builtin_subclasses_inside_bound_template_use_contract_codes) ... ok
+test_inputs_are_deeply_unchanged_for_all_golden_examples (test_f122.TestF122ImmutabilityAndStrictTypes.test_inputs_are_deeply_unchanged_for_all_golden_examples) ... ok
+test_no_file_time_or_network_side_effects (test_f122.TestF122ImmutabilityAndStrictTypes.test_no_file_time_or_network_side_effects) ... ok
+test_output_facts_are_detached_from_bound_and_loaded_inputs (test_f122.TestF122ImmutabilityAndStrictTypes.test_output_facts_are_detached_from_bound_and_loaded_inputs) ... ok
+test_replay_is_deterministic_and_returns_fresh_mutable_data (test_f122.TestF122ImmutabilityAndStrictTypes.test_replay_is_deterministic_and_returns_fresh_mutable_data) ... ok
+test_actual_f106_checks_all_packs_before_bound_validation (test_f122.TestF122NegativeExamples.test_actual_f106_checks_all_packs_before_bound_validation) ... ok
+test_all_negative_examples_return_exact_contract_code (test_f122.TestF122NegativeExamples.test_all_negative_examples_return_exact_contract_code) ... ok
+test_changed_fact_order_is_a_content_mismatch (test_f122.TestF122NegativeExamples.test_changed_fact_order_is_a_content_mismatch) ... ok
+test_changed_whitespace_is_a_content_mismatch (test_f122.TestF122NegativeExamples.test_changed_whitespace_is_a_content_mismatch) ... ok
+test_different_id_with_same_kind_but_different_body_is_a_mismatch (test_f122.TestF122NegativeExamples.test_different_id_with_same_kind_but_different_body_is_a_mismatch) ... ok
+test_extra_loaded_fields_are_rejected_by_actual_f106 (test_f122.TestF122NegativeExamples.test_extra_loaded_fields_are_rejected_by_actual_f106) ... ok
+test_initial_with_empty_subject_is_rejected_by_f106 (test_f122.TestF122NegativeExamples.test_initial_with_empty_subject_is_rejected_by_f106) ... ok
+test_missing_frozen_template_id_is_not_resolved_by_kind (test_f122.TestF122NegativeExamples.test_missing_frozen_template_id_is_not_resolved_by_kind) ... ok
+test_stage_three_identifier_error_precedes_f106_errors (test_f122.TestF122NegativeExamples.test_stage_three_identifier_error_precedes_f106_errors) ... ok
+test_unknown_kind_is_rejected_by_f106 (test_f122.TestF122NegativeExamples.test_unknown_kind_is_rejected_by_f106) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.050s
+
+OK
+test_error_is_value_error_with_stable_code (test_f120.BindActionLocaleErrorContract.test_error_is_value_error_with_stable_code) ... ok
+test_error_message_contains_code_only (test_f120.BindActionLocaleErrorContract.test_error_message_contains_code_only) ... ok
+test_both_inputs_broken_binding_f105_checked_first (test_f120.BindActionLocaleErrorPrecedence.test_both_inputs_broken_binding_f105_checked_first) ... ok
+test_f105_augmented_output_never_passed_back (test_f120.BindActionLocaleErrorPrecedence.test_f105_augmented_output_never_passed_back) ... ok
+test_f105_code_precedes_binding_mismatch (test_f120.BindActionLocaleErrorPrecedence.test_f105_code_precedes_binding_mismatch) ... ok
+test_f105_outbound_mode_propagated (test_f120.BindActionLocaleErrorPrecedence.test_f105_outbound_mode_propagated) ... ok
+test_f105_validity_window_propagated (test_f120.BindActionLocaleErrorPrecedence.test_f105_validity_window_propagated) ... ok
+test_f106_extra_registry_key_propagated (test_f120.BindActionLocaleErrorPrecedence.test_f106_extra_registry_key_propagated) ... ok
+test_f106_fact_set_dup_propagated (test_f120.BindActionLocaleErrorPrecedence.test_f106_fact_set_dup_propagated) ... ok
+test_inactive_locale_f106_code_precedes_binding_mismatch (test_f120.BindActionLocaleErrorPrecedence.test_inactive_locale_f106_code_precedes_binding_mismatch) ... ok
+test_invalid_input_precedes_f105_and_f106 (test_f120.BindActionLocaleErrorPrecedence.test_invalid_input_precedes_f105_and_f106) ... ok
+test_invalid_binding_config_type (test_f120.BindActionLocaleInvalidInput.test_invalid_binding_config_type) ... ok
+test_invalid_loaded_registry_type (test_f120.BindActionLocaleInvalidInput.test_invalid_loaded_registry_type) ... ok
+test_invalid_locale_argument (test_f120.BindActionLocaleInvalidInput.test_invalid_locale_argument) ... ok
+test_invalid_now_types_and_naive (test_f120.BindActionLocaleInvalidInput.test_invalid_now_types_and_naive) ... ok
+test_invalid_pinned_pack_version_type (test_f120.BindActionLocaleInvalidInput.test_invalid_pinned_pack_version_type) ... ok
+test_invalid_required_template_id (test_f120.BindActionLocaleInvalidInput.test_invalid_required_template_id) ... ok
+test_binding_registry_version_map_mismatch (test_f120.BindActionLocaleNegativeVectors.test_binding_registry_version_map_mismatch) ... ok
+test_fact_outside_binding_rejected (test_f120.BindActionLocaleNegativeVectors.test_fact_outside_binding_rejected) ... ok
+test_locale_not_allowed_by_binding_rejected (test_f120.BindActionLocaleNegativeVectors.test_locale_not_allowed_by_binding_rejected) ... ok
+test_missing_template_rejected (test_f120.BindActionLocaleNegativeVectors.test_missing_template_rejected) ... ok
+test_pinned_version_drift_rejected (test_f120.BindActionLocaleNegativeVectors.test_pinned_version_drift_rejected) ... ok
+test_determinism_repeat_call (test_f120.BindActionLocalePositive.test_determinism_repeat_call) ... ok
+test_pinned_none_uses_current_version (test_f120.BindActionLocalePositive.test_pinned_none_uses_current_version) ... ok
+test_positive_en_template (test_f120.BindActionLocalePositive.test_positive_en_template) ... ok
+test_positive_initial_template_without_facts (test_f120.BindActionLocalePositive.test_positive_initial_template_without_facts) ... ok
+test_positive_ru_golden_vector (test_f120.BindActionLocalePositive.test_positive_ru_golden_vector) ... ok
+test_third_locale_without_core_change (test_f120.BindActionLocalePositive.test_third_locale_without_core_change) ... ok
+test_output_exact_keys_and_no_grant_extension (test_f120.BindActionLocalePurityAndShape.test_output_exact_keys_and_no_grant_extension) ... ok
+test_output_independent_of_inputs (test_f120.BindActionLocalePurityAndShape.test_output_independent_of_inputs) ... ok
+test_source_inputs_immutable_on_error_path (test_f120.BindActionLocalePurityAndShape.test_source_inputs_immutable_on_error_path) ... ok
+test_source_inputs_immutable_on_success (test_f120.BindActionLocalePurityAndShape.test_source_inputs_immutable_on_success) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.017s
+
+OK
+test_actual_dependencies_and_consumer_positive_exact (test_public.Public.test_actual_dependencies_and_consumer_positive_exact) ... ok
+test_callback_exception_identity (test_public.Public.test_callback_exception_identity) ... ok
+test_drift_missing_and_fact_rejections (test_public.Public.test_drift_missing_and_fact_rejections) ... ok
+test_invalid_body_zero_save_original_error (test_public.Public.test_invalid_body_zero_save_original_error) ... ok
+test_question_blank_subject_actual_boundary (test_public.Public.test_question_blank_subject_actual_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.006s
+
+OK
+test_bind_materialize_validate_exact_abi_inputs (test_candidate_f130.Candidate.test_bind_materialize_validate_exact_abi_inputs) ... ok
+test_callback_exception_identity_after_materialize (test_candidate_f130.Candidate.test_callback_exception_identity_after_materialize) ... ok
+test_materialize_failure_zero_save_original_error (test_candidate_f130.Candidate.test_materialize_failure_zero_save_original_error) ... ok
+test_pinned_drift_rejection_zero_save_inputs_immutable (test_candidate_f130.Candidate.test_pinned_drift_rejection_zero_save_inputs_immutable) ... ok
+test_positive_runtime_initial_exact_en_ru_de (test_candidate_f130.Candidate.test_positive_runtime_initial_exact_en_ru_de) ... ok
+test_question_blank_subject_zero_save_same_code (test_candidate_f130.Candidate.test_question_blank_subject_zero_save_same_code) ... ok
+test_save_gets_original_dict_not_validate_return (test_candidate_f130.Candidate.test_save_gets_original_dict_not_validate_return) ... ok
+test_subject_passes_byte_exact_when_dependency_yields_spaced (test_candidate_f130.Candidate.test_subject_passes_byte_exact_when_dependency_yields_spaced) ... ok
+test_validate_error_identity_passes_through_unwrapped (test_candidate_f130.Candidate.test_validate_error_identity_passes_through_unwrapped) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.028s
+
+OK

@@ -1,0 +1,97 @@
+{
+  "actual_SOURCE_installation": "NOT_RUN",
+  "archive_validation": {
+    "report": "artifacts/F1-22_R2_RETURN_R1.validation.json",
+    "status": "RECORDED_EXTERNALLY_AFTER_ARCHIVE_CLOSE"
+  },
+  "business_activation": "NOT_RUN",
+  "clean_extractions": [
+    {
+      "baseline": {
+        "count": 152,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "skips": 0,
+        "status": "PASS"
+      },
+      "candidate": {
+        "count": 13,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "skips": 0,
+        "status": "PASS"
+      },
+      "clean_extraction": 1,
+      "own": {
+        "count": 38,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "skips": 0,
+        "status": "PASS"
+      },
+      "package_after": {
+        "exit_code": 0,
+        "protected_count": 59,
+        "status": "PASS"
+      },
+      "package_before": {
+        "exit_code": 0,
+        "protected_count": 59,
+        "status": "PASS"
+      }
+    },
+    {
+      "baseline": {
+        "count": 152,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "skips": 0,
+        "status": "PASS"
+      },
+      "candidate": {
+        "count": 13,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "skips": 0,
+        "status": "PASS"
+      },
+      "clean_extraction": 2,
+      "own": {
+        "count": 38,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "skips": 0,
+        "status": "PASS"
+      },
+      "package_after": {
+        "exit_code": 0,
+        "protected_count": 59,
+        "status": "PASS"
+      },
+      "package_before": {
+        "exit_code": 0,
+        "protected_count": 59,
+        "status": "PASS"
+      }
+    }
+  ],
+  "failure_status": false,
+  "independent_acceptance": "NOT_RUN",
+  "initial_candidate": {
+    "exit_code": 3,
+    "expected": "MISSING_IMPLEMENTATION"
+  },
+  "initial_evidence": "initial_commands.json (original logs retained byte for byte)",
+  "original_zip_sha256": "c96629b1cd13ffd07890c57297e0e21d9ffa1d6f041cf367850b252dfbaa10a7",
+  "own_test_count": 38,
+  "protected_count": 59,
+  "scope": "Author-run offline component verification; no independent acceptance or deployment",
+  "status": "OFFLINE_CHECKS_PASS",
+  "trusted_producer_and_live_policy_integration": "NOT_RUN"
+}

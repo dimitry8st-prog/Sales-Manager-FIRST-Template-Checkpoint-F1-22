@@ -1,0 +1,44 @@
+{
+  "archive": "/workspace/scratch/8febe5931947/f122-r2/repo/artifacts/F1-22_R2_RETURN_R1.zip",
+  "baseline_count": 152,
+  "candidate_count": 13,
+  "clean_extractions": 2,
+  "failure_status": false,
+  "finished_utc": "2026-10-19T06:56:56.675780+00:00",
+  "own_count": 38,
+  "reopen_validations": 2,
+  "skips": 0,
+  "started_utc": "2026-10-19T06:56:53.066150+00:00",
+  "status": "PASS",
+  "validations": [
+    {
+      "crc": "PASS",
+      "exact_manifest": "PASS",
+      "file_bytes": "PASS",
+      "files": 108,
+      "fresh_extraction_bytes": "PASS",
+      "issued_outside_allowlist": "PASS",
+      "protected_files": 59,
+      "single_root_and_safe_paths": "PASS",
+      "status": "PASS",
+      "tested_source_bytes": "PASS",
+      "validation": 1,
+      "zip_sha256": "dec1482d328e33f5d868bb7e40e4c9c0fcd202d29a1ac09f274675521f4452ee"
+    },
+    {
+      "crc": "PASS",
+      "exact_manifest": "PASS",
+      "file_bytes": "PASS",
+      "files": 108,
+      "fresh_extraction_bytes": "PASS",
+      "issued_outside_allowlist": "PASS",
+      "protected_files": 59,
+      "single_root_and_safe_paths": "PASS",
+      "status": "PASS",
+      "tested_source_bytes": "PASS",
+      "validation": 2,
+      "zip_sha256": "dec1482d328e33f5d868bb7e40e4c9c0fcd202d29a1ac09f274675521f4452ee"
+    }
+  ],
+  "zip_sha256": "dec1482d328e33f5d868bb7e40e4c9c0fcd202d29a1ac09f274675521f4452ee"
+}

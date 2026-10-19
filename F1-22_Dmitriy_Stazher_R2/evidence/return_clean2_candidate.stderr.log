@@ -1,0 +1,18 @@
+test_all_golden_real_f122_capture_decode (test_checkpoint_public.PublicCheckpoint.test_all_golden_real_f122_capture_decode) ... ok
+test_bridge_real_chain_return_identity (test_checkpoint_public.PublicCheckpoint.test_bridge_real_chain_return_identity) ... ok
+test_bridge_same_version_changed_text (test_checkpoint_public.PublicCheckpoint.test_bridge_same_version_changed_text) ... ok
+test_bridge_zero_callback_on_bad_checkpoint (test_checkpoint_public.PublicCheckpoint.test_bridge_zero_callback_on_bad_checkpoint) ... ok
+test_callback_error_same_object_no_retry (test_checkpoint_public.PublicCheckpoint.test_callback_error_same_object_no_retry) ... ok
+test_capture_domain (test_checkpoint_public.PublicCheckpoint.test_capture_domain) ... ok
+test_current_binding_error_before_broken_blob (test_checkpoint_public.PublicCheckpoint.test_current_binding_error_before_broken_blob) ... ok
+test_digest_and_canonical_priority (test_checkpoint_public.PublicCheckpoint.test_digest_and_canonical_priority) ... ok
+test_expected_pins (test_checkpoint_public.PublicCheckpoint.test_expected_pins) ... ok
+test_order_whitespace_and_isolation (test_checkpoint_public.PublicCheckpoint.test_order_whitespace_and_isolation) ... ok
+test_parser_and_schema (test_checkpoint_public.PublicCheckpoint.test_parser_and_schema) ... ok
+test_rehashed_invalid_semantics_real_f122 (test_checkpoint_public.PublicCheckpoint.test_rehashed_invalid_semantics_real_f122) ... ok
+test_size_and_input_precedence (test_checkpoint_public.PublicCheckpoint.test_size_and_input_precedence) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.026s
+
+OK
