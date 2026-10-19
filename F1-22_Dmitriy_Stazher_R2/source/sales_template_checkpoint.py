@@ -1,152 +1,183 @@
-"""F1-22 R2: deterministic template snapshots and the existing F130 save seam.
+"""F1-22 R2 — переносимый checkpoint уже выбранного шаблона.
 
-The codec checks transport integrity, never origin or sending permission.
-F122 owns frozen template semantics; F130 owns current policy validation.
-No I/O, time lookup, retries or state are introduced by this module.
+Фиксирует loaded registry, связанный шаблон и template_id в канонических
+байтах и сверяет их с текущим результатом F130 непосредственно перед
+внешним save. Digest — контроль целостности канонической формы, не подпись
+и не разрешение на отправку. Текущую привязку проверяет неизменённый F130.
 """
 import hashlib
 import json
 import re
 
-import sales_runtime_materialization as _runtime
-import sales_template_materialization as _templates
-
-
-_SCHEMA = "FIRST_TEMPLATE_CHECKPOINT_V1"
-_MAX_BYTES = 1048576
-_MAX_DEPTH = 64
-_PAYLOAD_KEYS = {"loaded_registry", "bound_language", "template_id"}
-_ENVELOPE_KEYS = {"schema_version", "payload", "sha256"}
-_VERSION_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}")
-_DIGEST_RE = re.compile(r"[0-9a-f]{64}")
+import sales_runtime_materialization
+import sales_template_materialization
 
 
 class TemplateCheckpointError(ValueError):
-    """A contract error carrying only a safe, fixed machine-readable code."""
+    """Ошибка транспортного контракта. Текст — только машинный код."""
+
+    def __init__(self, code):
+        super().__init__(code)
 
     @property
     def code(self):
         return self.args[0]
 
     def __str__(self):
-        return self.code
+        return self.args[0]
 
 
-class _InvalidJSON(ValueError):
-    """Internal parser signal; never exposes input values in public errors."""
+_SCHEMA_VERSION = "FIRST_TEMPLATE_CHECKPOINT_V1"
+_MAX_BLOB_BYTES = 1048576
+_MAX_CONTAINER_DEPTH = 64
+_ENVELOPE_KEYS = {"schema_version", "payload", "sha256"}
+_PAYLOAD_KEYS = {"loaded_registry", "bound_language", "template_id"}
+_VERSION_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}\Z")
+_DIGEST_RE = re.compile(r"[0-9a-f]{64}\Z")
+_LEADING_JSON_WS = re.compile(r"[ \t\r\n]*")
+
+
+class _JsonReject(Exception):
+    """Нарушение strict JSON: дубликат ключа или NaN/Infinity."""
+
+
+class _DomainError(Exception):
+    """Запрещённый domain, surrogate, цикл или глубина контейнеров."""
 
 
 def _fail(code):
     raise TemplateCheckpointError(code)
 
 
-def _check_string(value, code):
-    if type(value) is not str or any(
-        0xD800 <= ord(character) <= 0xDFFF for character in value
-    ):
-        _fail(code)
-
-
-def _check_domain(value, code):
-    """Only exact dict/list/str; container root=1; aliases are not cycles.
-
-    The active path, rather than all visited objects, distinguishes shared
-    references from cycles. At most 64 nested containers can be traversed.
-    """
-    active = set()
-
-    def visit(item, depth):
-        kind = type(item)
-        if kind is str:
-            _check_string(item, code)
-            return
-        if kind not in (dict, list) or depth > _MAX_DEPTH:
-            _fail(code)
-        identity = id(item)
-        if identity in active:
-            _fail(code)
-        active.add(identity)
-        try:
-            if kind is dict:
-                for key, child in item.items():
-                    _check_string(key, code)
-                    visit(child, depth + 1)
-            else:
-                for child in item:
-                    visit(child, depth + 1)
-        finally:
-            active.remove(identity)
-
-    visit(value, 1)
-
-
 def _canonical(value):
     return json.dumps(
-        value, ensure_ascii=False, sort_keys=True,
-        separators=(",", ":"), allow_nan=False,
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        allow_nan=False,
     ).encode("utf-8")
 
 
-def _unique_object(pairs):
-    result = {}
-    for key, value in pairs:
-        if key in result:
-            raise _InvalidJSON()
-        result[key] = value
-    return result
+def _has_surrogate(text):
+    return any(0xD800 <= ord(character) <= 0xDFFF for character in text)
 
 
-def _reject_number(_literal):
-    # All numbers, including finite values, are outside the transport domain.
-    raise _InvalidJSON()
-
-
-def _parse(blob):
-    try:
-        text = blob.decode("utf-8", errors="strict")
-        if text.startswith("\ufeff"):
-            raise _InvalidJSON()
-        envelope = json.loads(
-            text, object_pairs_hook=_unique_object,
-            parse_int=_reject_number, parse_float=_reject_number,
-            parse_constant=_reject_number,
-        )
-    except (UnicodeError, ValueError, RecursionError):
-        _fail("INVALID_CHECKPOINT_JSON")
-
-    # The envelope is transport wrapping, not an additional payload level.
-    # Its other fields still receive their own safe-domain validation.
-    if type(envelope) is dict:
-        for key, value in envelope.items():
-            _check_string(key, "INVALID_CHECKPOINT_JSON")
-            _check_domain(value, "INVALID_CHECKPOINT_JSON")
+def _walk(value, depth, stack, done):
+    kind = type(value)
+    if kind is str:
+        if _has_surrogate(value):
+            raise _DomainError()
+        return
+    if kind is not dict and kind is not list:
+        raise _DomainError()
+    if depth > _MAX_CONTAINER_DEPTH:
+        raise _DomainError()
+    marker = id(value)
+    if marker in stack:
+        raise _DomainError()
+    if marker in done:
+        return
+    stack.add(marker)
+    if kind is dict:
+        for key, item in value.items():
+            if type(key) is not str or _has_surrogate(key):
+                raise _DomainError()
+            _walk(item, depth + 1, stack, done)
     else:
-        _check_domain(envelope, "INVALID_CHECKPOINT_JSON")
-    return envelope
+        for item in value:
+            _walk(item, depth + 1, stack, done)
+    stack.remove(marker)
+    done.add(marker)
 
 
-def _check_schema(envelope):
+def _payload_domain(payload):
+    _walk(payload, 1, set(), set())
+
+
+def _reject_constant(_token):
+    raise _JsonReject()
+
+
+def _pairs(pairs):
+    seen = set()
+    mapping = {}
+    for key, item in pairs:
+        if key in seen:
+            raise _JsonReject()
+        seen.add(key)
+        mapping[key] = item
+    return mapping
+
+
+def _decode_json(blob):
+    if (
+        blob.startswith(b"\xef\xbb\xbf")
+        or blob.startswith(b"\xff\xfe")
+        or blob.startswith(b"\xfe\xff")
+    ):
+        _fail("INVALID_CHECKPOINT_JSON")
+    try:
+        text = blob.decode("utf-8")
+    except UnicodeDecodeError:
+        _fail("INVALID_CHECKPOINT_JSON")
+    if text.startswith("\ufeff"):
+        _fail("INVALID_CHECKPOINT_JSON")
+    decoder = json.JSONDecoder(
+        object_pairs_hook=_pairs,
+        parse_constant=_reject_constant,
+    )
+    start = _LEADING_JSON_WS.match(text).end()
+    try:
+        value, end = decoder.raw_decode(text, start)
+    except (_JsonReject, json.JSONDecodeError, ValueError):
+        _fail("INVALID_CHECKPOINT_JSON")
+    if end != len(text):
+        _fail("INVALID_CHECKPOINT_JSON")
+    return value
+
+
+def _decoded_domain(root):
+    """Глубина payload считается с 1; оболочка envelope уровень не добавляет."""
+    stack = set()
+    done = set()
+    if type(root) is dict:
+        marker = id(root)
+        stack.add(marker)
+        for key, item in root.items():
+            if type(key) is not str or _has_surrogate(key):
+                raise _DomainError()
+            _walk(item, 1, stack, done)
+        stack.remove(marker)
+        done.add(marker)
+        return
+    _walk(root, 1, stack, done)
+
+
+def _require_schema(envelope):
     if type(envelope) is not dict or set(envelope) != _ENVELOPE_KEYS:
         _fail("INVALID_CHECKPOINT_SCHEMA")
-    if (
-        envelope["schema_version"] != _SCHEMA
-        or type(envelope["sha256"]) is not str
-        or _DIGEST_RE.fullmatch(envelope["sha256"]) is None
-    ):
+    if envelope["schema_version"] != _SCHEMA_VERSION:
         _fail("INVALID_CHECKPOINT_SCHEMA")
     payload = envelope["payload"]
+    if type(payload) is not dict or set(payload) != _PAYLOAD_KEYS:
+        _fail("INVALID_CHECKPOINT_SCHEMA")
     if (
-        type(payload) is not dict
-        or set(payload) != _PAYLOAD_KEYS
-        or type(payload["loaded_registry"]) is not dict
+        type(payload["loaded_registry"]) is not dict
         or type(payload["bound_language"]) is not dict
         or type(payload["template_id"]) is not str
     ):
         _fail("INVALID_CHECKPOINT_SCHEMA")
+    digest = envelope["sha256"]
+    if type(digest) is not str or _DIGEST_RE.fullmatch(digest) is None:
+        _fail("INVALID_CHECKPOINT_SCHEMA")
+
+
+def _version(value):
+    return type(value) is str and _VERSION_RE.fullmatch(value) is not None
 
 
 def capture_checkpoint(loaded_registry, bound_language, *, template_id):
-    """Validate via real F122, then encode a canonical self-contained snapshot."""
     if (
         type(loaded_registry) is not dict
         or type(bound_language) is not dict
@@ -158,56 +189,70 @@ def capture_checkpoint(loaded_registry, bound_language, *, template_id):
         "bound_language": bound_language,
         "template_id": template_id,
     }
-    _check_domain(payload, "INVALID_CHECKPOINT_INPUT")
-    _templates.materialize_bound_template(
-        loaded_registry, bound_language, template_id=template_id,
+    try:
+        _payload_domain(payload)
+    except _DomainError:
+        _fail("INVALID_CHECKPOINT_INPUT")
+    sales_template_materialization.materialize_bound_template(
+        loaded_registry,
+        bound_language,
+        template_id=template_id,
     )
     envelope = {
-        "schema_version": _SCHEMA,
+        "schema_version": _SCHEMA_VERSION,
         "payload": payload,
         "sha256": hashlib.sha256(_canonical(payload)).hexdigest(),
     }
     blob = _canonical(envelope)
-    if len(blob) > _MAX_BYTES:
+    if len(blob) > _MAX_BLOB_BYTES:
         _fail("CHECKPOINT_TOO_LARGE")
     return blob
 
 
 def materialize_checkpoint(blob, *, expected_registry_version, expected_pack_version):
-    """Decode in contract order and return the actual F122 result unchanged."""
-    if type(blob) is not bytes or any(
-        type(version) is not str or _VERSION_RE.fullmatch(version) is None
-        for version in (expected_registry_version, expected_pack_version)
-    ):
+    if type(blob) is not bytes or not _version(expected_registry_version) or not _version(expected_pack_version):
         _fail("INVALID_CHECKPOINT_INPUT")
-    if len(blob) > _MAX_BYTES:
+    if len(blob) > _MAX_BLOB_BYTES:
         _fail("CHECKPOINT_TOO_LARGE")
-    envelope = _parse(blob)
-    _check_schema(envelope)
+    try:
+        envelope = _decode_json(blob)
+        _decoded_domain(envelope)
+    except _DomainError:
+        _fail("INVALID_CHECKPOINT_JSON")
+    _require_schema(envelope)
     if blob != _canonical(envelope):
         _fail("NONCANONICAL_CHECKPOINT")
     payload = envelope["payload"]
-    if hashlib.sha256(_canonical(payload)).hexdigest() != envelope["sha256"]:
+    digest = hashlib.sha256(_canonical(payload)).hexdigest()
+    if envelope["sha256"] != digest:
         _fail("CHECKPOINT_DIGEST_MISMATCH")
-    material = _templates.materialize_bound_template(
-        payload["loaded_registry"], payload["bound_language"],
+    result = sales_template_materialization.materialize_bound_template(
+        payload["loaded_registry"],
+        payload["bound_language"],
         template_id=payload["template_id"],
     )
-    if material["registry_version"] != expected_registry_version:
+    if result["registry_version"] != expected_registry_version:
         _fail("CHECKPOINT_REGISTRY_MISMATCH")
-    if material["language_pack_version"] != expected_pack_version:
+    if result["language_pack_version"] != expected_pack_version:
         _fail("CHECKPOINT_PACK_MISMATCH")
-    return material
+    return result
 
 
-def prepare_checkpoint_materials(blob, loaded_registry, binding_config, *, now,
-                                locale, required_template_id, pinned_pack_version,
-                                save_materials):
-    """Use real F130 first; compare the snapshot inside its single-save seam."""
+def prepare_checkpoint_materials(
+    blob,
+    loaded_registry,
+    binding_config,
+    *,
+    now,
+    locale,
+    required_template_id,
+    pinned_pack_version,
+    save_materials,
+):
     if not callable(save_materials):
         _fail("INVALID_CHECKPOINT_INPUT")
 
-    def checked_save(materials):
+    def _consume(materials):
         frozen = materialize_checkpoint(
             blob,
             expected_registry_version=materials["registry_version"],
@@ -217,8 +262,12 @@ def prepare_checkpoint_materials(blob, loaded_registry, binding_config, *, now,
             _fail("CHECKPOINT_MATERIALS_MISMATCH")
         return save_materials(materials)
 
-    return _runtime.prepare_bound_materials(
-        loaded_registry, binding_config, now=now, locale=locale,
+    return sales_runtime_materialization.prepare_bound_materials(
+        loaded_registry,
+        binding_config,
+        now=now,
+        locale=locale,
         required_template_id=required_template_id,
-        pinned_pack_version=pinned_pack_version, save_materials=checked_save,
+        pinned_pack_version=pinned_pack_version,
+        save_materials=_consume,
     )

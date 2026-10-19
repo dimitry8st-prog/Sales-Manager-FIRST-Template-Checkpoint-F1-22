@@ -1,0 +1,32 @@
+test_bridge_does_not_mutate_inputs_or_touch_files (test_bridge.BridgeTests.test_bridge_does_not_mutate_inputs_or_touch_files) ... ok
+test_callback_error_is_the_same_object_and_is_not_retried (test_bridge.BridgeTests.test_callback_error_is_the_same_object_and_is_not_retried) ... ok
+test_current_failures_do_not_read_checkpoint_or_save (test_bridge.BridgeTests.test_current_failures_do_not_read_checkpoint_or_save) ... ok
+test_current_version_drift_uses_pin_order_and_skips_save (test_bridge.BridgeTests.test_current_version_drift_uses_pin_order_and_skips_save) ... ok
+test_en_ru_kinds_and_synthetic_locale_roundtrip_through_f130 (test_bridge.BridgeTests.test_en_ru_kinds_and_synthetic_locale_roundtrip_through_f130) ... ok
+test_noncallable_save_fails_before_f130 (test_bridge.BridgeTests.test_noncallable_save_fails_before_f130) ... ok
+test_real_chain_order_identity_and_single_external_save (test_bridge.BridgeTests.test_real_chain_order_identity_and_single_external_save) ... ok
+test_rehashed_damage_inside_bridge_does_not_save (test_bridge.BridgeTests.test_rehashed_damage_inside_bridge_does_not_save) ... ok
+test_same_version_text_change_and_other_id_do_not_save (test_bridge.BridgeTests.test_same_version_text_change_and_other_id_do_not_save) ... ok
+test_cycles_rejected_and_diamond_alias_is_not_a_cycle (test_reject.DomainAndParserTests.test_cycles_rejected_and_diamond_alias_is_not_a_cycle) ... ok
+test_depth_budget_includes_payload_root_and_stops_before_f122 (test_reject.DomainAndParserTests.test_depth_budget_includes_payload_root_and_stops_before_f122) ... ok
+test_duplicate_keys_bom_utf8_surrogate_and_trailing_junk (test_reject.DomainAndParserTests.test_duplicate_keys_bom_utf8_surrogate_and_trailing_junk) ... ok
+test_error_priority_when_several_defects_exist (test_reject.DomainAndParserTests.test_error_priority_when_several_defects_exist) ... ok
+test_forbidden_types_and_subclasses_never_call_f122 (test_reject.DomainAndParserTests.test_forbidden_types_and_subclasses_never_call_f122) ... ok
+test_registry_pin_is_checked_before_pack_pin (test_reject.DomainAndParserTests.test_registry_pin_is_checked_before_pack_pin) ... ok
+test_rehashed_semantic_damage_still_calls_f122_before_pins (test_reject.DomainAndParserTests.test_rehashed_semantic_damage_still_calls_f122_before_pins) ... ok
+test_schema_extras_missing_and_digest_shape (test_reject.DomainAndParserTests.test_schema_extras_missing_and_digest_shape) ... ok
+test_source_has_no_forbidden_operations (test_reject.DomainAndParserTests.test_source_has_no_forbidden_operations) ... ok
+test_valid_large_text_hits_the_inclusive_byte_limit (test_reject.DomainAndParserTests.test_valid_large_text_hits_the_inclusive_byte_limit) ... ok
+test_dict_key_order_does_not_change_canonical_bytes (test_roundtrip.RoundtripTests.test_dict_key_order_does_not_change_canonical_bytes) ... ok
+test_en_ru_five_kinds_and_third_locale_keep_exact_text (test_roundtrip.RoundtripTests.test_en_ru_five_kinds_and_third_locale_keep_exact_text) ... ok
+test_f122_result_object_is_returned_unchanged (test_roundtrip.RoundtripTests.test_f122_result_object_is_returned_unchanged) ... ok
+test_fact_list_order_is_not_normalized (test_roundtrip.RoundtripTests.test_fact_list_order_is_not_normalized) ... ok
+test_inputs_remain_equal_after_capture (test_roundtrip.RoundtripTests.test_inputs_remain_equal_after_capture) ... ok
+test_literal_fixture_preserves_unicode_whitespace_and_fact_order (test_roundtrip.RoundtripTests.test_literal_fixture_preserves_unicode_whitespace_and_fact_order) ... ok
+test_semantically_invalid_but_safe_domain_reaches_real_f122 (test_roundtrip.RoundtripTests.test_semantically_invalid_but_safe_domain_reaches_real_f122) ... ok
+test_shared_containers_without_cycle_roundtrip_and_stay_shared (test_roundtrip.RoundtripTests.test_shared_containers_without_cycle_roundtrip_and_stay_shared) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.288s
+
+OK

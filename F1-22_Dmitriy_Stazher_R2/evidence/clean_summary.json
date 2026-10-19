@@ -1,0 +1,41 @@
+[
+  {
+    "name": "clean_check_package",
+    "args": [
+      "CHECK_PACKAGE.py"
+    ],
+    "exit_code": 0,
+    "stdout_bytes": 27,
+    "stderr_bytes": 0
+  },
+  {
+    "name": "clean_baseline",
+    "args": [
+      "RUN_CHECKS.py",
+      "baseline"
+    ],
+    "exit_code": 0,
+    "stdout_bytes": 32,
+    "stderr_bytes": 22227
+  },
+  {
+    "name": "clean_candidate",
+    "args": [
+      "RUN_CHECKS.py",
+      "candidate"
+    ],
+    "exit_code": 0,
+    "stdout_bytes": 55,
+    "stderr_bytes": 1664
+  },
+  {
+    "name": "clean_own",
+    "args": [
+      "RUN_CHECKS.py",
+      "own"
+    ],
+    "exit_code": 0,
+    "stdout_bytes": 49,
+    "stderr_bytes": 3980
+  }
+]

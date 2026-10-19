@@ -1,0 +1,17 @@
+{
+  "en-GB": {
+    "subject": "  Subject  ",
+    "body": "  literal\n\t{KEEP}\u00a0ёЁ — ä\n",
+    "fact_ids": ["fixture.context", "fixture.contact"]
+  },
+  "ru-RU": {
+    "subject": "  Тема  ",
+    "body": "  буквально\n\t{KEEP}\u00a0ёЁ —\n",
+    "fact_ids": ["fixture.context", "fixture.contact"]
+  },
+  "de-DE": {
+    "subject": "  Klärung  ",
+    "body": "  Welche Frage?\n\täöü ß\u00a0\n",
+    "fact_ids": []
+  }
+}
