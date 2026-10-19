@@ -1,0 +1,45 @@
+{
+  "new_module_exists": false,
+  "dependencies": [
+    {
+      "sha256": "a35f93ae5c991c76fe96510eaa4fba2ad00fc36550ddf3b63a4805bc72a050c1",
+      "path": "sales_template_materialization.py"
+    },
+    {
+      "sha256": "520ebace73a563232a2ebb0fa41c1af9588b50b5955952ca576256f3bbda38f0",
+      "path": "sales_language_registry.py"
+    },
+    {
+      "sha256": "8bf357366230a0098e44ce69069dc5d0e29cf5af4da8a002c620e2e7d91cce7b",
+      "path": "sales_first_binding.py"
+    },
+    {
+      "sha256": "9fd72471d4f4d0db4cee0f3ee96d5e532392dcfc2e2a691a7e675aa6bfc89778",
+      "path": "sales_rules.py"
+    },
+    {
+      "sha256": "1aebba46aea057ad5492dfb6f2d59944d7b63fcee7bb9735e15fdef1b104c154",
+      "path": "sales_action_locale.py"
+    },
+    {
+      "sha256": "40f2082e2afe7d9eaabe5f4beb451f8e83a579124c58b6d7c77c37035c9be972",
+      "path": "sales_runtime_materialization.py"
+    },
+    {
+      "sha256": "20e55dafc3dc112b79d908c7de6caf53e4e744a6f4b4889f1a011897f46deb8f",
+      "path": "sales_first_handoff.py"
+    },
+    {
+      "sha256": "a155584d8635b462bb6822c2b2b3212df73f137902660d3aed504c84224dfa34",
+      "path": "sales_contracts.py"
+    },
+    {
+      "sha256": "b228f59c64835536e24a447b71d3e6d8a03314599b1095fc00ddeacbfdb6b0f8",
+      "path": "sales_mailbox_contract.py"
+    }
+  ],
+  "target": "C:\\Users\\Admin\\Desktop\\Рабочие проекты\\Sales Manager\\SOURCE\\strativon-sales-runtime-r3-2-auto",
+  "device": "dff75fdd-b5be-42e5-8443-399ffea492ce",
+  "remote_process": 6592,
+  "readonly": true
+}

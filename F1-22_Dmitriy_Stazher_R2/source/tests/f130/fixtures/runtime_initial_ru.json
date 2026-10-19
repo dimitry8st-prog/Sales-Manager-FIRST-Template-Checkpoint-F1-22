@@ -1,0 +1,122 @@
+{
+  "_comment": "Explicit synthetic approved INITIAL pack test fixture derived from installed third-locale vector; not an installed production approval.",
+  "loaded_registry": {
+    "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+    "registry_version": "registry-v1",
+    "default_locale": "en-GB",
+    "active_locales": [
+      "en-GB",
+      "ru-RU",
+      "de-DE"
+    ],
+    "language_pack_versions": {
+      "en-GB": "en-v1",
+      "ru-RU": "ru-v1",
+      "de-DE": "de-v1"
+    },
+    "approved_fact_ids": [
+      "fact-test"
+    ],
+    "packs_by_locale": {
+      "en-GB": {
+        "schema_version": "FIRST_LANGUAGE_PACK_V1",
+        "locale": "en-GB",
+        "version": "en-v1",
+        "templates": {
+          "explain": {
+            "kind": "QUESTION",
+            "locale": "en-GB",
+            "subject": "",
+            "body": "Synthetic approved example.",
+            "fact_ids": [
+              "fact-test"
+            ]
+          }
+        }
+      },
+      "ru-RU": {
+        "schema_version": "FIRST_LANGUAGE_PACK_V1",
+        "locale": "ru-RU",
+        "version": "ru-v1",
+        "templates": {
+          "explain": {
+            "kind": "QUESTION",
+            "locale": "ru-RU",
+            "subject": "",
+            "body": "Синтетический пример для проверки.",
+            "fact_ids": [
+              "fact-test"
+            ]
+          },
+          "opening": {
+            "kind": "INITIAL",
+            "locale": "ru-RU",
+            "subject": "Синтетическая тема",
+            "body": "Синтетическое первое сообщение.",
+            "fact_ids": []
+          }
+        }
+      },
+      "de-DE": {
+        "schema_version": "FIRST_LANGUAGE_PACK_V1",
+        "locale": "de-DE",
+        "version": "de-v1",
+        "templates": {
+          "explain": {
+            "kind": "QUESTION",
+            "locale": "de-DE",
+            "subject": "",
+            "body": "Synthetisches Pruefbeispiel.",
+            "fact_ids": [
+              "fact-test"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "binding_config": {
+    "schema_version": "FIRST_BINDING_INPUT_V1",
+    "client_id": "client-test",
+    "runtime_campaign_id": "11111111-1111-4111-8111-111111111111",
+    "make_campaign_id": "make-campaign-test",
+    "offer": {
+      "offer_id": "offer-test",
+      "name": "Synthetic offer",
+      "description": "Synthetic configuration example."
+    },
+    "mailbox": {
+      "mailbox_ref": "mb-test",
+      "sender_email": " Seller@Example.Test "
+    },
+    "owner_approval_ref": "fixture:synthetic-not-live-approval",
+    "binding_version": "binding-v1",
+    "valid_from": "2026-10-12T09:00:00+00:00",
+    "expires_at": "2026-10-13T09:00:00+00:00",
+    "release_mode": "NO_OUTBOUND",
+    "default_locale": "en-GB",
+    "allowed_locales": [
+      "en-GB",
+      "ru-RU",
+      "de-DE"
+    ],
+    "language_pack_versions": {
+      "en-GB": "en-v1",
+      "ru-RU": "ru-v1",
+      "de-DE": "de-v1"
+    },
+    "daily_send_limit": 2,
+    "max_followups": 1,
+    "approved_facts": [
+      {
+        "fact_id": "fact-test",
+        "text": "Synthetic example only.",
+        "source_ref": "fixture:fact-test"
+      }
+    ]
+  },
+  "locale": "ru-RU",
+  "required_template_id": "opening",
+  "pinned_pack_version": "ru-v1",
+  "now": "2026-10-12T12:00:00+00:00"
+}

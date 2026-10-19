@@ -1,0 +1,11 @@
+{
+  "project_id": "sales-manager-first",
+  "task_id": "F1-22",
+  "technical_revision": "R2",
+  "assignee": "Дмитрий стажёр",
+  "status": "PREPARED_FOR_MANUAL_HANDOFF_NOT_ISSUED",
+  "scope_delta": "new_checkpoint_codec_and_existing_F130_callback_bridge",
+  "accepted_R1": "READ_ONLY_RETAINED_AUTHOR_UNVERIFIED",
+  "implementation": "SCAFFOLD_NOT_IMPLEMENTED",
+  "assignment_id": "F1-22-DMITRIY-STAZHER-20261019"
+}

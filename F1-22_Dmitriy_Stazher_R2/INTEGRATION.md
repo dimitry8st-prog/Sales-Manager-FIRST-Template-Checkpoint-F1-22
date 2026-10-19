@@ -1,0 +1,11 @@
+# Внедрение и откат — отдельному интегратору
+
+Нативная read-only проверка обнаружила принятые F122/F130/F120 на DESKTOP-29M52RR; новый sales_template_checkpoint.py отсутствовал. Девять dependency bytes приложены из actual SOURCE. references/SOURCE_PREFLIGHT.json фиксирует SHA. Полный путь SOURCE: C:\Users\Admin\Desktop\Рабочие проекты\Sales Manager\SOURCE\strativon-sales-runtime-r3-2-auto.
+
+Точка capture: существующий producer уже имеет реально F106-loaded registry, результат F120 и сохранённый template_id; capture_checkpoint принимает именно их. Компонент не получает их из клиента/произвольной метки schema. Bytes записывает существующий внешний владелец хранения, здесь нового владельца/SQL/API нет.
+
+Точка перед save: интегратор вызывает prepare_checkpoint_materials(blob,current_loaded_registry,current_raw_binding,now=current_aware_datetime,locale=selected_locale,required_template_id=saved_id,pinned_pack_version=current_expected_pin,save_materials=existing_callback). Модуль вызывает неизменённый F130; его single-callback seam сравнивает checkpoint перед существующим сохранением. F130 продолжает проверять текущий F105 срок по current now; snapshot не замораживает время и не обходится raw-binding validation. Может использоваться вместе с ранее сделанным выбором SM06, но не изменяет его.
+
+Приёмка офлайн не включает поиск trusted producers, live wiring, version/principal authority, актуальную policy retrieval, queue/SQL, локализацию QA или business activation. Это реальные отдельные интеграционные работы, не обязанность кандидата и не объявлены выполненными. Поле hash не удостоверяет campaign/tenant. Интегратор обязан передавать доверенные текущие аргументы и сохранять существующие STOP/lease/hold/final gates.
+
+После независимой приёмки: свежий hash/dependency/collision preflight; backup SOURCE с проверяемым фактическим restore; установить только новый root module и собственные tests/docs по утверждённой карте; baseline+component на actualSOURCE; контролируемый rollback своих добавлений и повторная установка; независимая проверка установленного. Предложение не разрешает activation/SQL/provider calls. При конфликте нового пути остановить установку; accepted kernel не перезаписывать. Откат — удалить только установленный новый файл при совпадении accepted SHA, восстановить свои tests/docs по backup; никакого удаления чужих изменений.

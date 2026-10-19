@@ -1,0 +1,57 @@
+{
+  "registry": {
+    "schema_version": "FIRST_LANGUAGE_REGISTRY_V1",
+    "registry_version": "fixture-third-v1",
+    "default_locale": "de-DE",
+    "active_locales": [
+      "de-DE"
+    ],
+    "language_pack_versions": {
+      "de-DE": "de-v1"
+    }
+  },
+  "packs": [
+    {
+      "schema_version": "FIRST_LANGUAGE_PACK_V1",
+      "locale": "de-DE",
+      "version": "de-v1",
+      "templates": {
+        "question": {
+          "kind": "QUESTION",
+          "locale": "de-DE",
+          "subject": "",
+          "body": "Welche Frage möchten Sie klären?",
+          "fact_ids": []
+        }
+      }
+    }
+  ],
+  "approved_fact_ids": [],
+  "template_id": "question",
+  "bound_language": {
+    "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+    "status": "BOUND",
+    "locale": "de-DE",
+    "language_pack_version": "de-v1",
+    "registry_version": "fixture-third-v1",
+    "approved_template": {
+      "kind": "QUESTION",
+      "locale": "de-DE",
+      "subject": "",
+      "body": "Welche Frage möchten Sie klären?",
+      "fact_ids": []
+    },
+    "approved_fact_ids": []
+  },
+  "expected": {
+    "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+    "locale": "de-DE",
+    "language_pack_version": "de-v1",
+    "registry_version": "fixture-third-v1",
+    "kind": "QUESTION",
+    "subject": "",
+    "body": "Welche Frage möchten Sie klären?",
+    "fact_ids": [],
+    "template_id": "question"
+  }
+}

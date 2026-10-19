@@ -1,0 +1,27 @@
+# F122_TEMPLATE_CHECKPOINT_V1 / техническая R2
+
+Модуль source/sales_template_checkpoint.py. API синхронный. Ошибка компонента TemplateCheckpointError(ValueError), `.code` и `str(error)` содержат только указанный код. Входные тексты в ошибках не раскрывать. Ошибки настоящего F122/F130/F105/F106/consumer/callback проходят исходным объектом, без обёртки, повторов и нового сохранения. Входы и байты не изменяются; результаты независимы между вызовами.
+
+## Формат и канонизация
+
+Payload ровно {"loaded_registry":dict,"bound_language":dict,"template_id":str}. Значения внутри payload: только точные встроенные dict/list/str; ключи dict — точные str; не допускаются подклассы, циклы, числа/bool/None/tuple/custom object, surrogate U+D800–U+DFFF. Aliasing без циклов допустим. При decode budget вложенности считается от payload root=1 точно как при capture; envelope не добавляет уровень. Остальные поля envelope отдельно проверяются на безопасный domain. Максимальная вложенность контейнеров 64 (payload root depth=1); превышение/цикл/запрещённый тип — INVALID_CHECKPOINT_INPUT при capture, INVALID_CHECKPOINT_JSON при decode. Максимальная длина готового blob 1048576 байт включительно, превышение CHECKPOINT_TOO_LARGE. Это лимит только новой транспортной формы, accepted API не меняются.
+
+Canonical(value)=json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(",",":"),allow_nan=False).encode("utf-8"). Digest=lowercase SHA256 hex Canonical(payload). Envelope ровно {"schema_version":"FIRST_TEMPLATE_CHECKPOINT_V1","payload":payload,"sha256":digest}. Blob=Canonical(envelope), точные bytes, без BOM/newline. Subject/body и порядок списков (facts/active_locales) не нормализуются. Сортировка ключей не сортирует списки.
+
+## capture_checkpoint(loaded_registry,bound_language,*,template_id)->bytes
+
+Порядок: (1) проверить безопасный JSON domain/depth корня payload, root loaded_registry/bound_language должны быть точными dict, template_id точный str, иначе INVALID_CHECKPOINT_INPUT; (2) ровно один реальный вызов sales_template_materialization.materialize_bound_template с этими аргументами — полная валидация F106 и буквального выбранного шаблона остаётся F122; (3) построить canonical envelope и проверить конечный byte limit. Результат F122 не заменять собственной реконструкцией. Неверные semantic поля идут в настоящий F122. Валидация domain до F122 намеренно принадлежит новому transport ABI.
+
+## materialize_checkpoint(blob,*,expected_registry_version,expected_pack_version)->dict
+
+Порядок: (1) blob точные bytes и обе expected версии точные str, совпадающие с [A-Za-z0-9][A-Za-z0-9_.:-]{0,127}, иначе INVALID_CHECKPOINT_INPUT; (2) byte limit; (3) UTF8 strict JSON: запрещены BOM, дубликаты ключей на любом уровне, NaN/Infinity, неверный domain/depth, любой мусор после JSON → INVALID_CHECKPOINT_JSON; (4) точный fieldset/types envelope и payload, schema literal, digest ровно 64 lowercase hex → INVALID_CHECKPOINT_SCHEMA; (5) blob != Canonical(envelope) → NONCANONICAL_CHECKPOINT; (6) digest mismatch → CHECKPOINT_DIGEST_MISMATCH; (7) настоящий F122 ровно один раз на payload, ошибки исходным объектом; (8) сравнить F122 result.registry_version с expected_registry_version, затем result.language_pack_version с expected_pack_version: CHECKPOINT_REGISTRY_MISMATCH, CHECKPOINT_PACK_MISMATCH; (9) вернуть исходный результат F122. Digest/каноничность не делают невалидный semantic payload валидным. Например пересчитанный digest с испорченным body вызывает F122 TEMPLATE_CONTENT_MISMATCH.
+
+## prepare_checkpoint_materials(blob,loaded_registry,binding_config,*,now,locale,required_template_id,pinned_pack_version,save_materials)->любой callback result
+
+1. Проверить callable(save_materials), иначе INVALID_CHECKPOINT_INPUT. Никаких остальных preflight-проверок текущих F130 args самостоятельно не выполнять.
+2. Вызвать настоящий sales_runtime_materialization.prepare_bound_materials ровно один раз с текущими loaded_registry,binding_config,now,locale,required_template_id,pinned_pack_version и внутренним callback. При отказе F130 до callback checkpoint не читать: ошибки текущей привязки, consumer и прочего сохраняют исходный приоритет.
+3. Внутренний callback получает ровно один positional dict materials. В нём вызвать materialize_checkpoint с expected_registry_version=materials["registry_version"], expected_pack_version=materials["language_pack_version"]. Это реальная проверка frozen F122, не доверие сохранённому результату.
+4. Сравнить полный F122 result dict с текущим materials обычным точным equality (accepted core гарантирует строгую форму). При различии CHECKPOINT_MATERIALS_MISMATCH. Дополнительно scope/input ничего не подменять; требуемые template_id/locale включены в полное сравнение. Текущий materials передаётся внешнему save_materials ровно одним positional аргументом, ровно один раз; возвращается тот же callback result object. Перед сравнением/на отказе внешний callback не вызывать.
+5. Callback exceptions проходят тем же объектом; wrapper никогда не повторяет callback и не интерпретирует outcome. После возможного эффекта ошибка не превращается в безопасный retry. Никакого самостоятельного SQL/commit/UNKNOWN mapping.
+
+Bridge intentionally validates current F130 before parsing blob. Capture и materialize_checkpoint не выбирают locale, не bind-ят повторно и не зовут F130. Bridge не зовёт F120 отдельно: ровно accepted F130 chain. Все реальные зависимости через публичные API. Используйте модульные импорты, чтобы reviewer мог наблюдать вызовы публичных функций без замены реального поведения.

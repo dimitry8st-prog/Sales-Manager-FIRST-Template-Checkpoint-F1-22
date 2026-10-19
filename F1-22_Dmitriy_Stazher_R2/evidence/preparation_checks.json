@@ -1,0 +1,13 @@
+{
+  "baseline": {
+    "count": 152,
+    "exit_code": 0,
+    "skips": 0
+  },
+  "candidate": {
+    "expected": "MISSING_IMPLEMENTATION",
+    "exit_code": 3
+  },
+  "component_status": "NOT_IMPLEMENTED_NOT_ACCEPTED",
+  "independent_audit": "PENDING"
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "FIRST_LANGUAGE_PACK_V1",
+  "locale": "en-GB",
+  "version": "en-v1",
+  "templates": {
+    "initial": {
+      "kind": "INITIAL",
+      "locale": "en-GB",
+      "subject": "Synthetic example",
+      "body": "This is a synthetic conversation example.",
+      "fact_ids": []
+    },
+    "question": {
+      "kind": "QUESTION",
+      "locale": "en-GB",
+      "subject": "",
+      "body": "What would you like to clarify?",
+      "fact_ids": []
+    },
+    "objection": {
+      "kind": "OBJECTION",
+      "locale": "en-GB",
+      "subject": "",
+      "body": "Thank you for sharing your concern.",
+      "fact_ids": []
+    },
+    "followup": {
+      "kind": "FOLLOWUP",
+      "locale": "en-GB",
+      "subject": "",
+      "body": "Would you like to continue the conversation?",
+      "fact_ids": []
+    },
+    "handoff": {
+      "kind": "HANDOFF",
+      "locale": "en-GB",
+      "subject": "",
+      "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+      "fact_ids": [
+        "fixture.contact",
+        "fixture.context"
+      ]
+    }
+  }
+}

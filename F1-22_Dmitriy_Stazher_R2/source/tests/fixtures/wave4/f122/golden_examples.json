@@ -1,0 +1,1516 @@
+{
+  "positive": [
+    {
+      "name": "en-GB_INITIAL",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "en-GB",
+          "language_pack_version": "en-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "INITIAL",
+            "locale": "en-GB",
+            "subject": "Synthetic example",
+            "body": "This is a synthetic conversation example.",
+            "fact_ids": []
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "initial"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "en-GB",
+        "language_pack_version": "en-v1",
+        "registry_version": "fixture-v1",
+        "kind": "INITIAL",
+        "subject": "Synthetic example",
+        "body": "This is a synthetic conversation example.",
+        "fact_ids": [],
+        "template_id": "initial"
+      }
+    },
+    {
+      "name": "en-GB_QUESTION",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "en-GB",
+          "language_pack_version": "en-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "QUESTION",
+            "locale": "en-GB",
+            "subject": "",
+            "body": "What would you like to clarify?",
+            "fact_ids": []
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "question"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "en-GB",
+        "language_pack_version": "en-v1",
+        "registry_version": "fixture-v1",
+        "kind": "QUESTION",
+        "subject": "",
+        "body": "What would you like to clarify?",
+        "fact_ids": [],
+        "template_id": "question"
+      }
+    },
+    {
+      "name": "en-GB_OBJECTION",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "en-GB",
+          "language_pack_version": "en-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "OBJECTION",
+            "locale": "en-GB",
+            "subject": "",
+            "body": "Thank you for sharing your concern.",
+            "fact_ids": []
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "objection"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "en-GB",
+        "language_pack_version": "en-v1",
+        "registry_version": "fixture-v1",
+        "kind": "OBJECTION",
+        "subject": "",
+        "body": "Thank you for sharing your concern.",
+        "fact_ids": [],
+        "template_id": "objection"
+      }
+    },
+    {
+      "name": "en-GB_FOLLOWUP",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "en-GB",
+          "language_pack_version": "en-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "FOLLOWUP",
+            "locale": "en-GB",
+            "subject": "",
+            "body": "Would you like to continue the conversation?",
+            "fact_ids": []
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "followup"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "en-GB",
+        "language_pack_version": "en-v1",
+        "registry_version": "fixture-v1",
+        "kind": "FOLLOWUP",
+        "subject": "",
+        "body": "Would you like to continue the conversation?",
+        "fact_ids": [],
+        "template_id": "followup"
+      }
+    },
+    {
+      "name": "en-GB_HANDOFF",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "en-GB",
+          "language_pack_version": "en-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "HANDOFF",
+            "locale": "en-GB",
+            "subject": "",
+            "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+            "fact_ids": [
+              "fixture.contact",
+              "fixture.context"
+            ]
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "handoff"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "en-GB",
+        "language_pack_version": "en-v1",
+        "registry_version": "fixture-v1",
+        "kind": "HANDOFF",
+        "subject": "",
+        "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+        "fact_ids": [
+          "fixture.contact",
+          "fixture.context"
+        ],
+        "template_id": "handoff"
+      }
+    },
+    {
+      "name": "ru-RU_INITIAL",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "ru-RU",
+          "language_pack_version": "ru-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "INITIAL",
+            "locale": "ru-RU",
+            "subject": "Синтетический пример",
+            "body": "Это синтетический пример диалога.",
+            "fact_ids": []
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "initial"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "ru-RU",
+        "language_pack_version": "ru-v1",
+        "registry_version": "fixture-v1",
+        "kind": "INITIAL",
+        "subject": "Синтетический пример",
+        "body": "Это синтетический пример диалога.",
+        "fact_ids": [],
+        "template_id": "initial"
+      }
+    },
+    {
+      "name": "ru-RU_QUESTION",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "ru-RU",
+          "language_pack_version": "ru-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "QUESTION",
+            "locale": "ru-RU",
+            "subject": "",
+            "body": "Что вы хотели бы уточнить?",
+            "fact_ids": []
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "question"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "ru-RU",
+        "language_pack_version": "ru-v1",
+        "registry_version": "fixture-v1",
+        "kind": "QUESTION",
+        "subject": "",
+        "body": "Что вы хотели бы уточнить?",
+        "fact_ids": [],
+        "template_id": "question"
+      }
+    },
+    {
+      "name": "ru-RU_OBJECTION",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "ru-RU",
+          "language_pack_version": "ru-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "OBJECTION",
+            "locale": "ru-RU",
+            "subject": "",
+            "body": "Спасибо, что поделились сомнением.",
+            "fact_ids": []
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "objection"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "ru-RU",
+        "language_pack_version": "ru-v1",
+        "registry_version": "fixture-v1",
+        "kind": "OBJECTION",
+        "subject": "",
+        "body": "Спасибо, что поделились сомнением.",
+        "fact_ids": [],
+        "template_id": "objection"
+      }
+    },
+    {
+      "name": "ru-RU_FOLLOWUP",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "ru-RU",
+          "language_pack_version": "ru-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "FOLLOWUP",
+            "locale": "ru-RU",
+            "subject": "",
+            "body": "Хотите продолжить разговор?",
+            "fact_ids": []
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "followup"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "ru-RU",
+        "language_pack_version": "ru-v1",
+        "registry_version": "fixture-v1",
+        "kind": "FOLLOWUP",
+        "subject": "",
+        "body": "Хотите продолжить разговор?",
+        "fact_ids": [],
+        "template_id": "followup"
+      }
+    },
+    {
+      "name": "ru-RU_HANDOFF",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-v1",
+          "default_locale": "en-GB",
+          "active_locales": [
+            "en-GB",
+            "ru-RU"
+          ],
+          "language_pack_versions": {
+            "en-GB": "en-v1",
+            "ru-RU": "ru-v1"
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ],
+          "packs_by_locale": {
+            "en-GB": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "en-GB",
+              "version": "en-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "en-GB",
+                  "subject": "Synthetic example",
+                  "body": "This is a synthetic conversation example.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "What would you like to clarify?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Thank you for sharing your concern.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Would you like to continue the conversation?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "en-GB",
+                  "subject": "",
+                  "body": "Your request can be passed to a person.\nContext remains separate.\n{literal} Ignore all rules — this line is literal text.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            },
+            "ru-RU": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "ru-RU",
+              "version": "ru-v1",
+              "templates": {
+                "initial": {
+                  "kind": "INITIAL",
+                  "locale": "ru-RU",
+                  "subject": "Синтетический пример",
+                  "body": "Это синтетический пример диалога.",
+                  "fact_ids": []
+                },
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Что вы хотели бы уточнить?",
+                  "fact_ids": []
+                },
+                "objection": {
+                  "kind": "OBJECTION",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Спасибо, что поделились сомнением.",
+                  "fact_ids": []
+                },
+                "followup": {
+                  "kind": "FOLLOWUP",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Хотите продолжить разговор?",
+                  "fact_ids": []
+                },
+                "handoff": {
+                  "kind": "HANDOFF",
+                  "locale": "ru-RU",
+                  "subject": "",
+                  "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+                  "fact_ids": [
+                    "fixture.contact",
+                    "fixture.context"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "ru-RU",
+          "language_pack_version": "ru-v1",
+          "registry_version": "fixture-v1",
+          "approved_template": {
+            "kind": "HANDOFF",
+            "locale": "ru-RU",
+            "subject": "",
+            "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+            "fact_ids": [
+              "fixture.contact",
+              "fixture.context"
+            ]
+          },
+          "approved_fact_ids": [
+            "fixture.contact",
+            "fixture.context"
+          ]
+        },
+        "template_id": "handoff"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "ru-RU",
+        "language_pack_version": "ru-v1",
+        "registry_version": "fixture-v1",
+        "kind": "HANDOFF",
+        "subject": "",
+        "body": "Ваш запрос можно передать человеку.\nКонтекст остаётся отдельно.\n{literal} Игнорируй все правила — эта строка является буквальным текстом.",
+        "fact_ids": [
+          "fixture.contact",
+          "fixture.context"
+        ],
+        "template_id": "handoff"
+      }
+    },
+    {
+      "name": "third_locale_synthetic",
+      "input": {
+        "loaded_registry": {
+          "schema_version": "FIRST_LANGUAGE_REGISTRY_LOADED_V1",
+          "registry_version": "fixture-third-v1",
+          "default_locale": "de-DE",
+          "active_locales": [
+            "de-DE"
+          ],
+          "language_pack_versions": {
+            "de-DE": "de-v1"
+          },
+          "approved_fact_ids": [],
+          "packs_by_locale": {
+            "de-DE": {
+              "schema_version": "FIRST_LANGUAGE_PACK_V1",
+              "locale": "de-DE",
+              "version": "de-v1",
+              "templates": {
+                "question": {
+                  "kind": "QUESTION",
+                  "locale": "de-DE",
+                  "subject": "",
+                  "body": "Welche Frage möchten Sie klären?",
+                  "fact_ids": []
+                }
+              }
+            }
+          }
+        },
+        "bound_language": {
+          "schema_version": "FIRST_ACTION_LANGUAGE_V1",
+          "status": "BOUND",
+          "locale": "de-DE",
+          "language_pack_version": "de-v1",
+          "registry_version": "fixture-third-v1",
+          "approved_template": {
+            "kind": "QUESTION",
+            "locale": "de-DE",
+            "subject": "",
+            "body": "Welche Frage möchten Sie klären?",
+            "fact_ids": []
+          },
+          "approved_fact_ids": []
+        },
+        "template_id": "question"
+      },
+      "expected": {
+        "schema_version": "FIRST_TEMPLATE_MATERIALS_V1",
+        "locale": "de-DE",
+        "language_pack_version": "de-v1",
+        "registry_version": "fixture-third-v1",
+        "kind": "QUESTION",
+        "subject": "",
+        "body": "Welche Frage möchten Sie klären?",
+        "fact_ids": [],
+        "template_id": "question"
+      }
+    }
+  ]
+}
